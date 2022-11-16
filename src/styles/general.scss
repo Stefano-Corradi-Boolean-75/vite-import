@@ -1,0 +1,14 @@
+
+// npm i bootstrap
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+// npm i "@fontsource/roboto"
+@import 'node_modules/@fontsource/roboto/index.css';
+@import 'node_modules/@fontsource/roboto/300.css';
+
+
+body{
+  background-color: brown;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
