@@ -5,14 +5,20 @@ import colori from './data/colori';
 
 // senza export default importo tra le graffe gli elementi che mi servono
 import {code, getRandomNumber} from './data/data';
+import {store} from './data/store'
+import AppFooter from './components/AppFooter.vue'
 
 export default {
   name: 'App',
+  components:{
+    AppFooter
+  },
   data(){
     return{
       colori,
       code,
-      getRandomNumber
+      getRandomNumber,
+      store
     }
   }
 }
@@ -25,7 +31,11 @@ export default {
     <ul>
       <li v-for="(colore, index) in colori" :key="index">{{colore}}</li>
     </ul>
+    <button @click="store.counter++" class="btn btn-info">Incrementa il contatore</button>
   </div>
+
+  <AppFooter />
+
 </template>
 
 
