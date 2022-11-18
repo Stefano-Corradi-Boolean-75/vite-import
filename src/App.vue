@@ -18,7 +18,26 @@ export default {
       colori,
       code,
       getRandomNumber,
-      store
+      store,
+      numeri:[1,2,3,4,5,6,7,8,9],
+      date: '2022/11/18'
+    }
+  },
+  methods:{
+    miaFunzione(saluto, numero){
+      console.log(saluto, numero);
+      store.counter++
+    },
+    altraFunzione(){
+      console.log('Altra Funzione');
+    }
+  },
+  computed:{
+    numeriPari(){
+      return this.numeri.filter( n => !(n % 2) )
+    },
+    formatData(){
+      return this.date.split('/').reverse().join('/');
     }
   }
 }
@@ -27,14 +46,23 @@ export default {
 <template>
   <div class="container my-5">
 
+    <h1>Oggi è il {{formatData}} di {{date}}</h1>
+
     <h1>Import codice {{code}} random {{getRandomNumber(1,10)}}</h1>
     <ul>
       <li v-for="(colore, index) in colori" :key="index">{{colore}}</li>
     </ul>
     <button @click="store.counter++" class="btn btn-info">Incrementa il contatore</button>
+
+    <h1>Numeri pari</h1>
+    <ul>
+      <li v-for="(n, index) in numeriPari" :key="index">{{n}}</li>
+    </ul>
+
+
   </div>
 
-  <AppFooter />
+  <AppFooter @mioEvento="miaFunzione" @altroEvento="altraFunzione" />
 
 </template>
 
