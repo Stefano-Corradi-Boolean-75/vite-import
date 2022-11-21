@@ -59,6 +59,11 @@ export default {
       <li v-for="(n, index) in numeriPari" :key="index">{{n}}</li>
     </ul>
 
+    <br>
+    <i class="fa-solid fa-star"></i>
+    <br>
+    <span class="fi fi-it"></span>
+
 
   </div>
 
